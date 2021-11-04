@@ -1,6 +1,6 @@
 {
   "name": "vars-singleton",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "make variables to be singleton.",
   "main": "lib/index.js",
   "dependencies": {},
@@ -19,21 +19,14 @@
     "type": "git",
     "url": "git+https://github.com/wangshihao111/js-signleton.git"
   },
-  "keywords": [
-    "singleton"
-  ],
+  "keywords": ["singleton"],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wangshihao111/js-signleton/issues"
-  },
+  "bugs": { "url": "https://github.com/wangshihao111/js-signleton/issues" },
   "homepage": "https://github.com/wangshihao111/js-signleton#readme",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "files": [
-    "lib",
-    "package.json"
-  ]
+  "files": ["lib", "package.json"]
 }
