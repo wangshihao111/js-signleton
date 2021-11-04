@@ -1,7 +1,7 @@
 {
   "name": "vars-singleton",
   "version": "0.1.0",
-  "description": "make variables to singleton.",
+  "description": "make variables to be singleton.",
   "main": "lib/index.js",
   "dependencies": {},
   "devDependencies": {
