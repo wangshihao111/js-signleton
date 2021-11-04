@@ -1,7 +1,7 @@
 {
-  "name": "js-singleton",
+  "name": "vars-singleton",
   "version": "0.1.0",
-  "description": "",
+  "description": "make variables to singleton.",
   "main": "lib/index.js",
   "dependencies": {},
   "devDependencies": {
@@ -18,7 +18,9 @@
     "type": "git",
     "url": "git+https://github.com/wangshihao111/js-signleton.git"
   },
-  "keywords": [],
+  "keywords": [
+    "singleton"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
