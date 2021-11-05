@@ -6,7 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^16.11.6",
-    "fast-publish": "^0.0.6",
+    "fast-publish": "^0.1.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.4.4"
   },
@@ -19,14 +19,21 @@
     "type": "git",
     "url": "git+https://github.com/wangshihao111/js-signleton.git"
   },
-  "keywords": ["singleton"],
+  "keywords": [
+    "singleton"
+  ],
   "author": "",
   "license": "ISC",
-  "bugs": { "url": "https://github.com/wangshihao111/js-signleton/issues" },
+  "bugs": {
+    "url": "https://github.com/wangshihao111/js-signleton/issues"
+  },
   "homepage": "https://github.com/wangshihao111/js-signleton#readme",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "files": ["lib", "package.json"]
+  "files": [
+    "lib",
+    "package.json"
+  ]
 }
