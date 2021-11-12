@@ -1,13 +1,5 @@
-export interface SingletonInterface {
-  singleton: <T = any>(name: string, value: T) => T;
-}
-
-export class Singleton implements SingletonInterface {
-  private pool: Map<any, any>;
-
-  constructor() {
-    this.pool = new Map();
-  }
+export class BaseSingleton {
+  constructor(private pool: Map<any, any>) {}
 
   public singleton(key: string, value: any) {
     let singletonValue = this.pool.get(key);
@@ -17,12 +9,21 @@ export class Singleton implements SingletonInterface {
     }
     return singletonValue;
   }
+
+  public overrideSingleton(key: string, value: any) {
+    this.pool.set(key, value);
+  }
 }
 
-export class GlobalSingleton implements SingletonInterface {
-  private pool: Record<string, any>;
-
+export class Singleton extends BaseSingleton {
   constructor() {
+    super(new Map());
+  }
+}
+
+export class GlobalSingleton extends BaseSingleton {
+  constructor() {
+    let pool: Map<any, any>;
     const g: any =
       typeof window !== 'undefined'
         ? window
@@ -30,17 +31,11 @@ export class GlobalSingleton implements SingletonInterface {
         ? global
         : globalThis;
     if (g.__jsSingleton__) {
-      this.pool = g.__jsSingleton__;
+      pool = g.__jsSingleton__;
     } else {
-      this.pool = g.__jsSingleton__ = {};
+      pool = g.__jsSingleton__ = new Map();
     }
-  }
-  singleton(key: string, value: any) {
-    let singletonValue = this.pool[key];
-    if (!singletonValue) {
-      singletonValue = this.pool[key] = value;
-    }
-    return singletonValue;
+    super(pool);
   }
 }
 
@@ -52,8 +47,16 @@ export function createSingleton<T = any>(key: string, value: T): T {
   return singleton.singleton(key, value);
 }
 
+export function overrideSingleton(key: string, value: any): void {
+  singleton.overrideSingleton(key, value);
+}
+
 export function createGlobalSingleton<T = any>(key: string, value: T): T {
   return globalSingleton.singleton(key, value);
+}
+
+export function overrideGlobalSingleton(key: string, value: any): void {
+  globalSingleton.overrideSingleton(key, value);
 }
 
 export default createGlobalSingleton;
