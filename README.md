@@ -13,7 +13,7 @@ Make variables to be singleton.
 ```ts
 import { createSingleton } from 'vars-singleton';
 
-const singletonVar = createSingletonValue('key/of/the/value', someValue);
+const singletonVar = createSingleton('key/of/the/value', someValue);
 ```
 
 - 如果你想使用全局模式，则可使用如下方法：该方法会将所有单例变量挂载到全局对象上，因此及时存在多版本，也不影响使用
@@ -21,7 +21,7 @@ const singletonVar = createSingletonValue('key/of/the/value', someValue);
 ```ts
 import { createGlobalSingleton } from 'vars-singleton';
 
-const singletonVar = createGlobalSingletonValue('key/of/the/value', someValue);
+const singletonVar = createGlobalSingleton('key/of/the/value', someValue);
 ```
 
 全局模式下，所有变量会被挂载到`__jsSingleton__`变量上。
